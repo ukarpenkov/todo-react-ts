@@ -19,10 +19,12 @@ const TodoItem = ({
       <input
         type="checkbox"
         checked={completed}
-        onChange={() => removeTodo(id)}
+        onChange={() => toggleTodo(id)}
       />
       <span>{title}</span>
-      <span onClick={() => toggleTodo(id)}>&times;</span>
+      <span style={{ cursor: 'pointer' }} onClick={() => removeTodo(id)}>
+        &times;
+      </span>
     </li>
   )
 }
