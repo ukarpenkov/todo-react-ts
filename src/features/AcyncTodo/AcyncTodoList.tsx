@@ -4,9 +4,9 @@ import { useAppDispatch } from 'redux-hook'
 
 import { selectAsyncTodos } from './asncTodoSelector'
 import { useSelector } from 'react-redux'
-import { removeTodo, toggleTodo } from 'features/Todo/todoSlice'
+
 import { useEffect } from 'react'
-import { fetchAllTodos } from './todoAcyncActions'
+import { fetchAllTodos, removeTodo, toggleTodo } from './todoAcyncActions'
 
 const AsyncTodoList = () => {
   const { list } = useSelector(selectAsyncTodos)

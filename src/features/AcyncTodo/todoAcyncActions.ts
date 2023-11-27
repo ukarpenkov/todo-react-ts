@@ -45,3 +45,40 @@ export const createTodo = createAsyncThunk<Todo, string>(
     return (await response.json()) as Todo
   }
 )
+
+export const removeTodo = createAsyncThunk<Todo['id'], Todo['id']>(
+  'todo/removeTodo',
+  async (id) => {
+    const response = await fetch(
+      'https://jsonplaceholder.typicode.com/todos/' + id,
+      {
+        method: 'DELETE',
+      }
+    )
+
+    return id
+  }
+)
+
+export const toggleTodo = createAsyncThunk<
+  Todo,
+  Todo['id'],
+  { state: { asyncTodos: TodoSlice } }
+>('todo/toggleTodo', async (id, { getState }) => {
+  const todo = getState().asyncTodos.list.find((el) => el.id === id)
+
+  if (todo) {
+    const response = await fetch(
+      'https://jsonplaceholder.typicode.com/todos/' + id,
+      {
+        method: 'PATCH',
+        headers: { 'Content-type': 'application/json' },
+        body: JSON.stringify({
+          completed: !todo.completed,
+        }),
+      }
+    )
+
+    return await response.json()
+  }
+})

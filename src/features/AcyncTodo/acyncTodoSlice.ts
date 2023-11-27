@@ -1,6 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { Todo } from 'components/types'
-import { createTodo, fetchAllTodos } from './todoAcyncActions'
+import {
+  createTodo,
+  fetchAllTodos,
+  removeTodo,
+  toggleTodo,
+} from './todoAcyncActions'
 
 export type TodoSlice = {
   status: 'idle' | 'loading' | 'finished' | 'error'
@@ -30,6 +35,15 @@ const todoSlice = createSlice({
       })
       .addCase(createTodo.fulfilled, (state, action) => {
         state.list.push(action.payload)
+      })
+      .addCase(removeTodo.fulfilled, (state, action) => {
+        state.list = state.list.filter((todo) => todo.id !== action.payload)
+      })
+      .addCase(toggleTodo.fulfilled, (state, action) => {
+        const todo = state.list.find((el) => el.id === action.payload.id)
+        if (todo) {
+          todo.completed = !todo.completed
+        }
       })
   },
 })
