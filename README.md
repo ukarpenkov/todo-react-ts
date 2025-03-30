@@ -1,46 +1,70 @@
-# Getting Started with Create React App
+# Todo App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A simple and minimalistic Todo application built with React and TypeScript. This app allows users to manage their tasks efficiently. Note: This app does not include any styles.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- Add new tasks to your todo list.
+- Mark tasks as completed.
+- Delete tasks from the list.
 
-### `yarn start`
+## Installation
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+1. Clone the repository:
+   ```bash
+   git clone <repository-url>
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd todo-react-ts
+   ```
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Usage
 
-### `yarn test`
+1. Start the development server:
+   ```bash
+   npm start
+   ```
+2. Open your browser and navigate to:
+   ```
+   http://localhost:3000
+   ```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Scripts
 
-### `yarn build`
+- `npm start`: Runs the app in development mode.
+- `npm run build`: Builds the app for production.
+- `npm test`: Runs the test suite.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Technologies Used
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **React**: A JavaScript library for building user interfaces.
+- **TypeScript**: A strongly typed programming language that builds on JavaScript.
+- **Node.js**: For managing dependencies and running scripts.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Folder Structure
 
-### `yarn eject`
+```
+todo-react-ts/
+├── src/
+│   ├── components/   # React components
+│   ├── hooks/        # Custom hooks
+│   ├── utils/        # Utility functions
+│   ├── App.tsx       # Main app component
+│   └── index.tsx     # Entry point
+├── public/           # Static assets
+├── package.json      # Project metadata and dependencies
+└── README.md         # Project documentation
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Contributing
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Contributions are welcome! Feel free to open an issue or submit a pull request.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## License
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
